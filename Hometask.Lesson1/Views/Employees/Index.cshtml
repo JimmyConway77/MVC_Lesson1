@@ -1,0 +1,36 @@
+﻿
+@{
+
+   // Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List of Employees for 'Rogs & Copyts' company</title>
+</head>
+<body>
+    <div> 
+        <h1>This is full list of Employees for 'Rogs & Copyts' company at @System.Convert.ToString(DateTime.Today)</h1>
+        <table>
+            <tr>
+                <td><p>ID</p></td>
+                <td><p>Name</p></td>
+                <td><p>Surname</p></td>
+                <td><p>Actions</p></td>
+            </tr>
+            @foreach (var e in ViewBag.Employees)
+            {
+                <tr>
+                    <td><p>@e.ID</p></td>
+                    <td><p>@e.Name</p></td>
+                    <td><p>@e.Surname</p></td>
+                    <td><p><a href="~/ViewEmployes/Index/@e.ID">View</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
